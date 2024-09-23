@@ -1,0 +1,15 @@
+import pgzrun
+import random
+WIDTH=400
+HEIGHT=400
+def draw():
+    screen.fill("dark green")
+    rect=Rect((200,200),(50,100))
+    screen.draw.rect(rect,"black")
+    rect2=Rect((40,40),(60,110))
+    screen.draw.rect(rect2,"red")
+
+
+
+
+pgzrun.go()
