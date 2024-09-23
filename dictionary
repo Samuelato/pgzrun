@@ -1,0 +1,17 @@
+#creating
+dict={1:"a",2:"b",3:"c",4:"d",5:"e",6:"f"}
+print(dict)
+#length of dict
+print(len(dict))
+#accessing
+print(dict[4])
+print(dict[1])
+#adding
+dict[7]="t"
+print(dict)
+#updating
+dict[3]="z"
+print(dict)
+#deleting
+del(dict[7])
+print(dict)
