@@ -25,6 +25,8 @@ def draw():
         o.draw()
         screen.draw.text(str(fn),(o.pos[0],o.pos[1]+20))
         fn+=1
+    for u in Listlines:
+        screen.draw.lines(u[0],u[1],(0,0,0))
     if nextorange <totaloranges:
         totaltime=time() - starttime
         screen.draw.text (str(round(totaltime,1)),(10,10),fontsize=30)
@@ -35,7 +37,10 @@ def on_mouse_down(pos):
     if nextorange<totaloranges:
        if Listorange[nextorange].collidepoint(pos):
         if nextorange:
+            Listlines.append((Listorange[nextorange-1].pos,Listorange[nextorange].pos))
+        nextorange+1
 
+        
 
 
 
