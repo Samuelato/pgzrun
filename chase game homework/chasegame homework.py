@@ -18,7 +18,24 @@ def draw():
 def randbal():
     basketbal.x=random.randint(0,600)
     basketbal.y=random.randint(0,300)
-    
+def update():
+    global score
+    if keyboard.left:
+        lebron.x=lebron.x-2
+    if keyboard.right:
+        lebron.x=lebron.x+2
+    if keyboard.up:
+        lebron.y=lebron.y-2
+    if keyboard.down:
+        lebron.y=lebron.y+2
+    if lebron.colliderect(basketbal):
+        score+=1
+        randbal()
+def go():
+    global gameover
+    gameover=True
+randbal()
+clock.schedule(go,28)
 
 
 
