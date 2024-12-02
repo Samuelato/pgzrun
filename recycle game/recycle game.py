@@ -11,10 +11,10 @@ totallevels=7
 gameovere=False
 gamecompleten=False
 items=[]
-currentlev=7
+currentlev=1
 def make_items(extraitem):
     newitem=[]
-    options=["paper bag.jpg"]+ random.choices(List)
+    options=["paper bag.jpg"]+ random.choices(List,k=extraitem)
     random.shuffle(options)
     for i in options:
         item=Actor(i)
@@ -27,6 +27,8 @@ def make_items(extraitem):
     return newitem
 def draw():
     screen.blit("background.jpg",(0,0))
+    if gameovere:
+        screen.draw.text("GAMEOVER!!!!!!!!!",center=(50,50),fontsize=60,color="white")
     for item in items:
         item.draw()
 def update():
@@ -38,7 +40,19 @@ def update():
 def game():
     global gameovere
     gameovere=True
-
+def on_mouse_down(pos):
+    global items,currentlev,gamecompleten
+    for i in items:
+        if i.collidepoint(pos):
+            if "paper bag" in i.image:
+                currentlev,totallevels 
+                if currentlev==totallevels:
+                    gamecompleten=True
+                else:
+                    currentlev+=1
+                    items.clear()
+            else:
+                game()
 
 
 
