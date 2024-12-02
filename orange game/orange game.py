@@ -9,7 +9,7 @@ Listlines=[]
 nextorange=0
 starttime=0
 totaltime=0
-totaloranges=25
+totaloranges=10
 def orang():
     global starttime
     for i in range(totaloranges):
@@ -33,7 +33,7 @@ def draw():
 def update():
     pass
 def on_mouse_down(pos):
-    global nextorange,Listlines
+    global nextorange,Listlines,totaloranges
     if nextorange<totaloranges:
        if Listorange[nextorange].collidepoint(pos):
         if nextorange:
@@ -42,6 +42,10 @@ def on_mouse_down(pos):
        else:
         Listlines=[]
         nextorange=0
+
+        if totaloranges > 1:
+            wrongeorange=Listorange.pop()
+            totaloranges-=1
 
     
 
