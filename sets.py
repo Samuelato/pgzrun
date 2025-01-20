@@ -12,3 +12,10 @@ set2={40,90,56,20,10}
 set3={40,20,0,66,80}
 #union
 print(set2|set3)
+#intersection
+print(set2&set3)
+#diffrence
+print(set2-set3)
+print(set3-set2)
+#symetric diffrence
+print(set2^set3)
