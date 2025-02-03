@@ -19,8 +19,8 @@ def bounce():
 def rock():
     #picking random positions
     #
-    x=random.randtint(100,400)
-    y=random.randtint(100,400)
+    x=random.randint(100,400)
+    y=random.randint(100,400)
     rocket.target=x,y
     target_angle=rocket.angle_to(rocket.target)
     target_angle+=360*((rocket.angle-target_angle+180)//360)
